@@ -1,0 +1,267 @@
+.box {
+  width: 200px;
+  height: 200px;
+
+  background-color: deeppink;
+
+  /* transform: translate(100%, 0);
+  transform: translate(100px, 0);
+  transform: translate(100px, 50px);
+
+  transform: scale(3);
+  transform: translate(100px, 100px) scale(1.5);
+  transform: translate(100px, 100px) scale(0.75);
+  transform: translate(100px, 100px) scale(1) rotate(5deg);
+  transform-origin: bottom left; */
+
+  /* transition: height 0.5s, background 0.25s;
+  transition: all 0.5s; */
+  transition: all 0.5s;
+}
+
+.box.active {
+  background-color: green;
+}
+
+/* .box:hover {
+  border-radius: 50%;
+  background-color: green;
+  transform: translate(100px, 0) rotate(135deg);
+} */
+
+@keyframes chayQuaChayLai {
+  from {
+    background-color: yellow;
+    transform: translate(0, 0);
+  }
+
+  20% {
+    background-color: blue;
+    transform: translate(-100px, 0);
+  }
+
+  30% {
+    background-color: green;
+    border-radius: 50%;
+    transform: translate(400px, 0);
+  }
+
+  to {
+    background-color: red;
+    transform: translate(0, 0);
+  }
+}
+
+.box {
+  /* animation-name: chayQuaChayLai; */
+  animation-duration: 4s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes changeColor {
+  from {
+    background-color: yellow;
+  }
+
+  25% {
+    background-color: red;
+  }
+
+  50% {
+    background-color: green;
+  }
+
+  75% {
+    background-color: purple;
+  }
+
+  to {
+    background-color: yellow;
+  }
+}
+
+body {
+  /* background-color: black; */
+
+  /* animation-name: changeColor; */
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes xoay {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+
+  border: 5px solid goldenrod;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-radius: 50%;
+
+  animation-name: xoay;
+  animation-duration: 1.75s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.hero__title {
+  max-width: 150px;
+  padding: 10px 30px;
+  border-radius: 4px;
+  margin: 0 auto;
+
+  color: white;
+  background-color: deeppink;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* Loading */
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+.loading {
+  margin: 50px;
+}
+
+.loading__dot.loading__dot {
+  background-color: black;
+}
+
+.loading__dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+  background-color: deeppink;
+
+  animation-name: zoom;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.loading__dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading__dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Custom checkbox */
+input[type="checkbox"] {
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 35px;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+
+  background-color: #fff;
+}
+
+input[type="checkbox"]:checked + label::before {
+  background-color: deeppink;
+}
+
+input[type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+
+  display: inline-block;
+  width: 4px;
+  height: 8px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+
+  transform: rotate(45deg);
+}
+
+@keyframes check {
+  from {
+    width: 0;
+    height: 0;
+  }
+
+  60% {
+    width: 4px;
+    height: 0;
+  }
+
+  to {
+    width: 4px;
+    height: 8px;
+  }
+}
+
+input[type="checkbox"]:checked + label::after {
+  animation-name: check;
+  animation-duration: 0.35s;
+  animation-fill-mode: both;
+}
