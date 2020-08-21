@@ -71,3 +71,7 @@ hoặc chạy lệnh
 ```
 git push
 ```
+
+## Cuối cùng lên Github kiểm tra xem thử code lên chưa hehee 
+
+Chúc các bạn thành công nhé! ❤
