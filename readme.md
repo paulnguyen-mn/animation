@@ -64,4 +64,10 @@ git commit -m "Nội dung commit message"
 
 ### Push code
 
+![](./git-push.png)
 
+hoặc chạy lệnh 
+
+```
+git push
+```
